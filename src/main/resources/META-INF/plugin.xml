@@ -1,0 +1,52 @@
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+
+<idea-plugin>
+
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.sdk.editor</id>
+
+  <!-- Text to display as name on Settings | Plugin page -->
+  <name>Fauxpilot Client</name>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Text to display as description on Settings | Plugin page -->
+  <description>
+    <![CDATA[
+      IntelliJ IDEA - Fauxpilot Client
+      You can generate subsequent code by selecting the specified content or by generating code from the previous text.
+      The shortcut key for triggering code prediction is alt+s.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.0.0</b> Release 2023.4 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Settings | Plugin page -->
+  <vendor url="https://github.com/csnowfox/fauxpilotClient">fauxpilotClient</vendor>
+
+  <actions>
+    <action id="c.snow.fox.code.assist"
+            class="org.csnowfox.fauxpilot.client.CodeAssistAction"
+            text="Code-Assist"
+            description="toggle assist"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
+    </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable parentId="tools" instance="org.csnowfox.fauxpilot.client.settings.AppSettingsConfigurable"
+                             id="org.csnowfox.fauxpilot.client.settings.AppSettingsConfigurable"
+                             displayName="fauxpilot-client"/>
+    <applicationService serviceImplementation="org.csnowfox.fauxpilot.client.settings.AppSettingsState"/>
+  </extensions>
+
+ </idea-plugin>
