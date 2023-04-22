@@ -8,7 +8,7 @@
 
 ## Others
 
-* Client is build around Fauxpilot server
+* Client is build around [Fauxpilot server](https://github.com/fauxpilot/fauxpilot)
 
 ## Using snapshots
 
