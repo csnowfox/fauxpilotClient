@@ -21,7 +21,6 @@ import java.awt.*;
 
 public class CodeAssistAction extends AnAction {
 
-
     @Override
     public void actionPerformed(@NotNull AnActionEvent event) {
         executeAssist(event);
