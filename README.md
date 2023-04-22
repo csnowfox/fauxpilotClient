@@ -8,3 +8,8 @@
 ## Others
 
 * Client is build around Fauxpilot server
+
+## Using snapshots
+
+![RUNOOB UsingSnapshots1](https://github.com/csnowfox/fauxpilotClient/releases/download/v0.9.0/UsingSnapshots1.png)
+![RUNOOB UsingSnapshots2](https://github.com/csnowfox/fauxpilotClient/releases/download/v0.9.0/UsingSnapshots2.png)
