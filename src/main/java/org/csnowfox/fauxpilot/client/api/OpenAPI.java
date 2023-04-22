@@ -51,7 +51,6 @@ public class OpenAPI {
             for (ChoicesObj choices : receiveMsgObj.getChoices()) {
                 resultContent = choices.getText() + "\r\n";
             }
-            resultContent = resultContent.replace("\n", "\r\n");
             return resultContent;
         } catch (Exception e1) {
             return null;

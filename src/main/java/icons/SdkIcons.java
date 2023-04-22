@@ -8,6 +8,6 @@ import javax.swing.*;
 
 public class SdkIcons {
 
-  public static final Icon Sdk_default_icon = IconLoader.getIcon("/icons/logo.svg", SdkIcons.class);
+  public static final Icon Sdk_default_icon = IconLoader.getIcon("/icons/sdk_18.svg", SdkIcons.class);
 
 }

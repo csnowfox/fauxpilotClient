@@ -33,7 +33,6 @@ public class CodeAssistAction extends AnAction {
         }
 
         int maxTokenSize = 200;
-
         final Document document = mEditor.getDocument();
         Caret primaryCaret = mEditor.getCaretModel().getPrimaryCaret();
         int currentOffset = primaryCaret.getOffset();
@@ -41,6 +40,7 @@ public class CodeAssistAction extends AnAction {
 
         final SelectionModel selectionModel = mEditor.getSelectionModel();
         String selectText = selectionModel.getSelectedText();
+
         if (!Utils.isBlank(selectText)) {
             String resultContent = OpenAPI.prompt(selectText);
             showPopupBalloon(resultContent, mEditor);
