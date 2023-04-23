@@ -42,23 +42,22 @@ public class CodeAssistAction extends AnAction {
         String selectText = selectionModel.getSelectedText();
 
         if (!Utils.isBlank(selectText)) {
-            String resultContent = OpenAPI.prompt(selectText);
-            showPopupBalloon(resultContent, mEditor);
+            showPopupBalloon(selectText, mEditor);
         } else {
-            String resultContent = OpenAPI.prompt(promptText);
-            showPopupBalloon(resultContent, mEditor);
+            showPopupBalloon(promptText, mEditor);
         }
     }
 
     /**
      * Text pop-up display
      */
-    private void showPopupBalloon(final String result, Editor editor) {
+    private void showPopupBalloon(final String prompt, Editor editor) {
         ApplicationManager.getApplication().invokeLater((Runnable) new Runnable() {
             @Override
             public void run() {
+                String resultContent = OpenAPI.prompt(prompt);
                 final JBPopupFactory factory = JBPopupFactory.getInstance();
-                factory.createHtmlTextBalloonBuilder(result, (Icon) null, (Color) null, (HyperlinkListener) null).createBalloon().show(factory.guessBestPopupLocation(editor), Balloon.Position.below);
+                factory.createHtmlTextBalloonBuilder(resultContent, (Icon) null, (Color) null, (HyperlinkListener) null).createBalloon().show(factory.guessBestPopupLocation(editor), Balloon.Position.below);
             }
         });
     }
