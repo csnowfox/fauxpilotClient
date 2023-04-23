@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-* To use the fauxpilot client, you need to first complete the deployment of the fauxpilot server. You need to set the service address in the settings file ->Settings ->Tools ->fauxpilot client, and fill in the following information: http://150.129.193.5/v1/engines/codegen/completion
+* To use the fauxpilot client, you need to first complete the deployment of the fauxpilot server. You need to set the service address in the settings file ->Settings ->Tools ->fauxpilot client, and fill in the following information: http://127.0.0.1/v1/engines/codegen/completion
 * You can generate subsequent code by selecting the specified content or by generating code from the previous text.
 * The shortcut key for triggering code prediction is alt+s.
 
